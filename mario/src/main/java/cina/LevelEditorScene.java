@@ -1,6 +1,7 @@
 package cina;
 
 import org.lwjgl.BufferUtils;
+import renderer.Shader;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -33,9 +34,9 @@ public class LevelEditorScene extends Scene{
     private int vertexID, fragmentID, shaderProgram;
     private float[] vertexArray = {
             //position              //color
-            0.5f, -0.0f, 0.0f,      1.0f, 0.0f,0.0f,1.0f, //bottom right 0
+            0.5f, -0.5f, 0.0f,      1.0f, 0.0f,0.0f,1.0f, //bottom right 0
             -0.5f,0.5f,0.0f,        0.0f,1.0f,0.0f,1.0f, //top left 1
-            0.5f,0.5f,0.0f,         0.0f,0.0f,1.0f,1.0f  //top right 2
+            0.5f,0.5f,0.0f,         0.0f,0.0f,1.0f,1.0f,  //top right 2
             -0.5f,-0.5f,0.0f,        1.0f,1.0f,0.0f,1.0f //bottom left 3
     };
     //IMPORTANT: Must be in counter-clockwise order
@@ -44,8 +45,9 @@ public class LevelEditorScene extends Scene{
             0, 1, 3 //bottom left triangle
     };
     private int vaoID,vboID,eboID;
-    public LevelEditorScene(){
 
+    public LevelEditorScene(){
+        Shader testShader = new Shader("assets/shaders/default.glsl");
     }
 
     @Override
