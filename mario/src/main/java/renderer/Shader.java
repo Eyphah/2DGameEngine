@@ -55,8 +55,6 @@ public class Shader {
             e.printStackTrace();
             assert false : "Error : could not open file for shader";
         }
-        System.out.println(vertexSource);
-        System.out.println(fragmentSource);
 
     }
 
@@ -181,6 +179,6 @@ public class Shader {
     public void uploadInt(String varName, int val){
         int varLocation = glGetUniformLocation(shaderProgramID,varName);
         use();
-        glUniform1f(varLocation,val);
+        glUniform1i(varLocation,val);
     }
 }
