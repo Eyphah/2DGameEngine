@@ -1,20 +1,25 @@
 package components;
 
 import cina.Component;
+import org.joml.Vector4f;
 
 public class SpriteRenderer extends Component {
-    private boolean firstTime = false;
+
+    private Vector4f color;
+
+    public SpriteRenderer(Vector4f color){
+        this.color = color;
+    }
 
     @Override
     public void update(float dt){
-        System.out.println("I am updating");
     }
 
     @Override
     public void start(){
-        if (!firstTime){
-            System.out.println("I am starting");
-            firstTime = true;
-        }
+    }
+
+    public Vector4f getColor() {
+        return this.color;
     }
 }
